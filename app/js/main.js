@@ -18,13 +18,13 @@ Highcharts.setOptions({
     }
 });
 
-let chartId = document.getElementById("chart-container");
+let chartIdCovidIndustries = document.getElementById("chart-container-covid-industries");
 
 // checks for the chart ID and displays a backup image if the browser can't find it
 setTimeout(function() {
-    if(chartId.innerHTML === "") {
+    if(chartIdCovidIndustries.innerHTML === "") {
         // console.log('noId');
-        let chartArea = document.getElementsByClassName("chart-area");
+        let chartArea = document.getElementsByClassName("chart-area-covid-industries");
         for(var i = 0; i < chartArea.length; i++) {
             chartArea[i].style.display = "none";
         } 
@@ -36,7 +36,7 @@ setTimeout(function() {
 },500);
 
 function drawHighcharts() {
-    Highcharts.chart(chartId, {
+    Highcharts.chart(chartIdCovidIndustries, {
         chart: {
             type: 'bar',
             styledMode: true,
@@ -48,7 +48,7 @@ function drawHighcharts() {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1YOKb5l2VM4aAB2r20N_1aT_1vEajYrP3U-U3A6lZbC0'
+            googleSpreadsheetKey: '1R8YueGHm1-_IaioelNoj9YK7kmTt7uY2ExixMj-gcFc'
         },
         // for bar charts only
         plotOptions: {
@@ -74,11 +74,7 @@ function drawHighcharts() {
         //     }
         // },
         legend: {
-            align: 'right',
-            symbolRadius: 0,
-            verticalAlign: 'top',
-            x: 10,
-            itemMarginTop: -10
+            enabled: false
         },
         xAxis: {
             labels: {
@@ -109,7 +105,7 @@ function drawHighcharts() {
             },
             chartOptions: {
                 chart: {
-                spacingRight: 10
+                spacingRight: 15
                 },
                 legend: {
                     align: 'left',
